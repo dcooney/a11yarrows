@@ -15,8 +15,8 @@ if(list){
 		// options
 		selector: 'li',
 		hasParent: false,
-		start: '#meow',
-		end: '#meowEnd'
+		start: '#startEl',
+		end: '#endEl'
 	});
 }
 ```

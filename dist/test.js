@@ -1,4 +1,4 @@
-var a11yarrows =
+var test =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -82,10 +82,22 @@ var a11yarrows =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./example/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./example/index.js":
+/*!**************************!*\
+  !*** ./example/index.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _index = __webpack_require__(/*! ../index */ \"./index.js\");\n\nvar _index2 = _interopRequireDefault(_index);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar list = document.querySelector('#list');\nif (list) {\n\t(0, _index2.default)(list, {\n\t\t// options\n\t\tselector: 'li',\n\t\thasParent: false,\n\t\tstart: '#startEl',\n\t\tend: '#endEl'\n\t});\n}\n\n//# sourceURL=webpack://%5Bname%5D/./example/index.js?");
+
+/***/ }),
 
 /***/ "./index.js":
 /*!******************!*\

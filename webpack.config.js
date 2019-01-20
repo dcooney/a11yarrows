@@ -3,7 +3,8 @@ var dir = 'dist';
 
 module.exports = {
    entry: {
-      a11yarrows: "./src/index.js"
+      a11yarrows: "./index.js",
+      test: "./example/index.js"
    },
 	output: {
    	path: path.join(__dirname, dir),
