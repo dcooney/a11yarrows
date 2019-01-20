@@ -1,4 +1,4 @@
-import keycodes from './keycodes';
+let keycodes = require('./keycodes');
 
 /**
  * Dispatch run on window eventlistener

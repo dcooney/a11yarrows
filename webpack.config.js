@@ -1,9 +1,8 @@
 var path = require('path');
 var dir = 'dist';
-
 module.exports = {
    entry: {
-      a11yarrows: "./index.js",
+      a11yarrows: "./src/a11yarrows.js",
       test: "./example/index.js"
    },
 	output: {
@@ -22,6 +21,7 @@ module.exports = {
 					presets: ['env']
 				}
 			},
-	]},
+		]
+	},
 	plugins: []
 };
