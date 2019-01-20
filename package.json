@@ -1,7 +1,7 @@
 {
-	"name": "@dcooney/a11yarrows",
+	"name": "a11yarrows",
 	"version": "0.0.1",
-	"description": "a11yarrows",
+	"description": "a11yarrows enables arrow key controls on specified elements for accessibility.",
 	"main": "src/a11yarrows.js",
 	"scripts": {
 		"start": "webpack -w --mode development --config=webpack/dev.config.js",
