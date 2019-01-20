@@ -1,11 +1,17 @@
 #a11yarrows
 
+
+`import a11yarrows from 'a11yarrows';`
+
+or
+
+`<script src="node_modules/a11yarrows/dist/a11yarrows.js">`
+
 ```
-import a11yarrows from 'a11yarrows';
 
 let list = document.querySelector('#list');
 if(list){
-	var arrows = new a11yarrows(list, {
+	a11yarrows(list, {
 		// options
 		selector: 'li',
 		hasParent: false,
@@ -14,7 +20,3 @@ if(list){
 	});
 }
 ```
-
-or
-
-`<script src="node_modules/a11yarrows/dist/a11yarrows.js">`

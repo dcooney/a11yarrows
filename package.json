@@ -1,15 +1,26 @@
 {
 	"name": "a11yarrows",
-	"version": "0.0.1",
-	"description": "a11yarrows enables arrow key controls on specified elements for accessibility.",
+	"version": "0.0.2",
+	"description": "Enable arrow key controls on specified elements for accessibility.",
 	"main": "src/a11yarrows.js",
 	"scripts": {
 		"start": "webpack -w --mode development --config=webpack/dev.config.js",
 		"build": "webpack -p --mode production --config=webpack/prod.config.js"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Darren Cooney (Connekt)",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dcooney/a11yarrows.git"
+	},
+	"homepage": "https://github.com/dcooney/a11yarrows",
+	"keywords": [
+		"a11y",
+		"js",
+		"es6",
+		"keyboard",
+		"javascripts"
+	],
+	"license": "MIT",
 	"devDependencies": {
 		"autoprefixer": "^7.1.4",
 		"babel-core": "^6.25.0",

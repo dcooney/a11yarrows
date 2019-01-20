@@ -1,8 +1,7 @@
-import a11yarrows from '../index.js';
-
+import a11yarrows from '../index';
 let list = document.querySelector('#list');
 if(list){
-	var arrows = new a11yarrows(list, {
+	a11yarrows(list, {
 		// options
 		selector: 'li',
 		hasParent: false,
