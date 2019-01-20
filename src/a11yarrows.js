@@ -30,4 +30,4 @@ let a11yarrows = (target, options) => {
 	});
 
 }
-export default a11yarrows;
+module.exports = a11yarrows;

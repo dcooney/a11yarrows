@@ -76,4 +76,4 @@ let controls = (e, target = '', selector = 'a', hasParent = true, start = null, 
 	}
 	return true;
 }
-export default controls;
+module.exports = controls;

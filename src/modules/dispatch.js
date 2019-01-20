@@ -81,4 +81,4 @@ let dispatch = (e, options) => {
 	return true;
 
 }
-export default dispatch;
+module.exports = dispatch;

@@ -29,4 +29,4 @@ let setTabIndex = (target, selector, start = '', end = '') => {
 	}
 
 }
-export default setTabIndex;
+module.exports = setTabIndex;
