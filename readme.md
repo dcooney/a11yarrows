@@ -1,5 +1,5 @@
 # a11yarrows
-Enable keyboard arrow navigation on focusable elements.
+Enable keyboard arrow navigation on focusable elements - [View example](https://dcooney.github.io/a11yarrows/example/)
 
 ## Install
 
