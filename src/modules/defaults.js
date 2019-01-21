@@ -1,9 +1,8 @@
 module.exports = {
 	selector: 'a',
-	hasParent: false,
+	event: 'keydown',
 	start: '',
 	end: '',
-	event: 'keydown',
 	next: 'down',
 	prev: 'up'
 }

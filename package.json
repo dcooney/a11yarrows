@@ -1,6 +1,6 @@
 {
 	"name": "a11yarrows",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Enable arrow key controls on specified elements for accessibility.",
 	"main": "src/a11yarrows.js",
 	"scripts": {
