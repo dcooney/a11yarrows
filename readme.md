@@ -13,27 +13,31 @@ or by direct script include:
 
 ## Initialize
 
-At minimum, a11yarrows requires a `target` HTML element to be defined and accepts an [`options`](#options) object.
+At minimum, a11yarrows requires a `target` HTML element to be defined and passed into the `a11yarrows` function call. The `target` element should be a container element that wraps your list.
+
+`let target = document.querySelector('#a11y-list');`
+
+There is also an optional [`options`](#options) object that can modify default parameters.
 
 `a11yarrows(target, options);`
 
-ES6 Module:
+Initialize as ES6 Module:
 
 ```
 import a11yarrows from 'a11yarrows';
 
-let list = document.querySelector('#list');
-a11yarrows(list, {
+let target = document.querySelector('#a11y-list');
+a11yarrows(target, {
 	// options
 	selector: 'li'
 });
 ```
 
-Vanilla JS:
+Initialize with Vanilla JS:
 
 ```
-let list = document.querySelector('#list');
-a11yarrows(list, {
+let target = document.querySelector('#a11y-list');
+a11yarrows(target, {
 	// options
 	selector: '.item',
 	next: 'right',
