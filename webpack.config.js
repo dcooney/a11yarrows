@@ -2,8 +2,7 @@ var path = require('path');
 var dir = 'dist';
 module.exports = {
    entry: {
-      a11yarrows: "./src/a11yarrows.js",
-      test: "./example/index.js"
+      a11yarrows: "./src/a11yarrows.js"
    },
 	output: {
    	path: path.join(__dirname, dir),

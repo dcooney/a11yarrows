@@ -5,5 +5,6 @@ module.exports = {
 	left: 37,
 	escape: 27,
 	enter: 13,
+	spacebar: 32,
 	tab: 9
 };

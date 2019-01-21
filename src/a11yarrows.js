@@ -15,17 +15,18 @@ let a11yarrows = (target, options) => {
 	options.next = (options.next) ? options.next : 'down';
 	options.prev = (options.prev) ? options.prev : 'up';
 
-	//console.log(options);
+	// Get all selectors
+	let selectors = target.querySelectorAll(options.selector)
 
 	// Exit if target and selector are not set
-	if(!options.target || !options.selector) return;
+	if(!options.target || !selectors) return;
 
-	// Set tabindex on elements so they can be focused
-	setTabIndex(options.target, options.selector, options.start, options.end);
+	// Set tabindex on selectors so they can be focused
+	setTabIndex(selectors, options.start, options.end);
 
 	// Add event listener to selectors
 	window.addEventListener(options.event, function(e){
-		dispatch(e, options);
+		dispatch(e, options, selectors);
 	});
 
 }

@@ -1,21 +1,19 @@
 /**
  *
- * @param {*} target
  * @param {*} selector
  * @param {*} start
  * @param {*} end
  */
-let setTabIndex = (target, selector, start = '', end = '') => {
+let setTabIndex = (selectors = '', start = '', end = '') => {
 
 	// Get selectors
-	let elements = target.querySelectorAll(selector);
-	if(!elements){
+	if(!selectors){
 		return false;
 	}
 
 	// Loop all selectors
-	elements.forEach(element => {
-		element.tabIndex = 0;
+	selectors.forEach(selector => {
+		selector.tabIndex = 0;
 	});
 
 	// Start selector
