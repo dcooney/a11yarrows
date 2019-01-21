@@ -22,7 +22,7 @@ let a11yarrows = (target, options) => {
 	if(!options.target || !selectors) return;
 
 	// Set tabindex on selectors so they can be focused
-	setTabIndex(selectors, options.start, options.end);
+	setTabIndex(selectors);
 
 	// Add event listener to selectors
 	window.addEventListener(options.event, function(e){
