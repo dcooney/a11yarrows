@@ -3,46 +3,60 @@ Enable keyboard arrow navigation on focusable elements.
 
 ## Install
 
-a11yarrows is available via [NPM](https://www.npmjs.com/package/a11yarrows)
+a11yarrows can be installed via [NPM](https://www.npmjs.com/package/a11yarrows):
 
 `$ npm install a11yarrows --save`
 
+or by direct script include:
+
+`<script src="{path_to_scripts}/a11yarrows.js">`
+
 ## Initialize
 
-ES6 Module:
+At minimum, a11yarrows requires a `target` HTML element to be defined and passed into the `a11yarrows` function call. The `target` element should be a container element that wraps your list.
+
+`let target = document.querySelector('#a11y-list');`
+
+There is also an optional [`options`](#options) object that can modify default parameters.
+
+`a11yarrows(target, options);`
+
+Initialize as ES6 Module:
 
 ```
 import a11yarrows from 'a11yarrows';
 
-let list = document.querySelector('#list');
-a11yarrows(list, {
+let target = document.querySelector('#a11y-list');
+a11yarrows(target, {
+	// options
 	selector: 'li'
 });
 ```
 
-or direct `<script/>` include:
-
-`<script src="node_modules/a11yarrows/dist/a11yarrows.js">`
+Initialize with Vanilla JS:
 
 ```
-let list = document.querySelector('#list');
-if(list){
-	a11yarrows(list, {
-		// options
-		selector: '.item',
-		next: 'right',
-		prev: 'left'
-	});
-}
+let target = document.querySelector('#a11y-list');
+a11yarrows(target, {
+	// options
+	selector: '.item',
+	next: 'right',
+	prev: 'left'
+});
 ```
 
 ## Options
+a11yarrows accept a number of configuration parameters:
 
-| Option   | Description                                                               |
-|----------|---------------------------------------------------------------------------|
-| selector | Child elements will be used as focus elements. `default 'a'`              |
-| event    | EventListener. `default 'keydown'`                                        |
-| start    | The previous element to recieve focus if at start of list. `default null` |
-| end      | The next element to recieve focus if at end of list. `default null`       |
-| next     | Keyboard key to move to next element. `default 'down'`                    |
-| prev     | Keyboard key to move to previous element. `default 'up'`                  |
+| Option   	| Description                                               	|
+|----------	|-----------------------------------------------------------	|
+| selector 	| The target child elements to recieve focus. `default 'a'` 	|
+| event    	| JavaScript EventListener. `default 'keydown'`                        	|
+| next     	| Keyboard key to move to next element. `default 'down'`    	|
+| prev     	| Keyboard key to move to previous element. `default 'up'`  	|
+
+
+## License
+a11yarrows is released under the MIT license.
+
+
