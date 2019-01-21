@@ -1,7 +1,7 @@
 {
 	"name": "a11yarrows",
-	"version": "0.0.6",
-	"description": "Enable arrow key controls on specified elements for accessibility.",
+	"version": "1.0.0",
+	"description": "a11yarrows enables keyboard arrow navigation on focusable elements.",
 	"main": "src/a11yarrows.js",
 	"scripts": {
 		"start": "webpack -w --mode development --config=webpack/dev.config.js",
