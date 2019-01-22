@@ -13,6 +13,8 @@ let dispatch = (e, options) => {
 	let el = e.target; // Current target focus
 	let keycode = e.which || e.keycode; // Current keycode
 
+	console.log(el);
+
 	// Get all selectors
 	let selectors = options.target.querySelectorAll(options.selector);
 

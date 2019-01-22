@@ -25,7 +25,6 @@ let a11yarrows = (target, options) => {
 	// Add event listener to selectors
 	window.addEventListener(options.event, function(e){
 		dispatch(e, options);
-		console.log("msla");
 	});
 
 }
