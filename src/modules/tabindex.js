@@ -9,8 +9,11 @@ let setTabIndex = (selectors = '') => {
 		return false;
 	}
 
+	// Convert NodeList to array (IE fix)
+	let array = Array.prototype.slice.call(selectors);
+
 	// Loop all selectors
-	selectors.forEach(selector => {
+	array.forEach(selector => {
 		selector.tabIndex = 0;
 	});
 

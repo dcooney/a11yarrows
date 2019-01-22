@@ -1,6 +1,7 @@
 let defaults = require('./modules/defaults');
 let dispatch = require('./modules/dispatch');
 let setTabIndex = require('./modules/tabindex');
+require('./modules/polyfills');
 
 /**
  * a11yarrows creates event listeners for arrow keys
