@@ -27,7 +27,14 @@ let dispatch = (e, options, selectors) => {
 		if(index < selectors.length){
 			selectors[index].focus();
 			return false;
+		} else {
+			// Go to first selector
+			if(options.loop){
+				selectors[0].focus();
+				return false;
+			}
 		}
+
 	}
 
 	// Previous
@@ -37,7 +44,12 @@ let dispatch = (e, options, selectors) => {
 		if(index < selectors.length && index !== -1){
 			selectors[index].focus();
 			return false;
-
+		} else {
+			// Go to last selector
+			if(options.loop){
+				selectors[selectors.length-1].focus();
+				return false;
+			}
 		}
 
 	}

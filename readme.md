@@ -51,7 +51,8 @@ a11yarrows accept a number of configuration parameters:
 | Option   	| Description                                               	|
 |----------	|-----------------------------------------------------------	|
 | selector 	| The target child elements to recieve focus. `default 'a'` 	|
-| event    	| JavaScript EventListener. `default 'keydown'`                        	|
+| loop 		| User will loop through the choices. `default true` 				|
+| event    	| JavaScript EventListener. `default 'keydown'`                |
 | next     	| Keyboard key to move to next element. `default 'down'`    	|
 | prev     	| Keyboard key to move to previous element. `default 'up'`  	|
 
