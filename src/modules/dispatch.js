@@ -7,12 +7,17 @@ let isSelector = require('./isSelector');
  *
  * @param {*} e
  * @param {*} options
- * @param {*} selectors
  */
-let dispatch = (e, options, selectors) => {
+let dispatch = (e, options) => {
 
 	let el = e.target; // Current target focus
 	let keycode = e.which || e.keycode; // Current keycode
+
+	// Get all selectors
+	let selectors = options.target.querySelectorAll(options.selector);
+
+	// Convert NodeList to array (IE fix)
+	selectors = (selectors) ? Array.prototype.slice.call(selectors) : selectors;
 
 	let is_selector = isSelector(el, selectors);
 
