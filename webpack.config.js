@@ -1,5 +1,6 @@
 var path = require('path');
 var dir = 'dist';
+var name = 'a11yarrows';
 module.exports = {
    entry: {
       a11yarrows: "./src/a11yarrows.js"
@@ -8,7 +9,7 @@ module.exports = {
    	path: path.join(__dirname, dir),
       filename: "[name].js",
 		libraryTarget: 'var',
-		library: '[name]'
+		library: name
    },
 	module: {
 		rules: [
