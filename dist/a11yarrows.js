@@ -95,7 +95,7 @@ var a11yarrows =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/modules/defaults.js\");\nvar dispatch = __webpack_require__(/*! ./modules/dispatch */ \"./src/modules/dispatch.js\");\nvar setTabIndex = __webpack_require__(/*! ./modules/tabindex */ \"./src/modules/tabindex.js\");\n__webpack_require__(/*! ./modules/polyfills */ \"./src/modules/polyfills.js\");\n\n/**\n * a11yarrows creates event listeners for arrow keys\n * @param {*} target\n * @param {*} options\n */\nvar a11yarrows = function a11yarrows(target, options) {\n\n\t// Set options\n\toptions = Object.assign({}, defaults, options);\n\toptions.target = target;\n\toptions.next = options.next ? options.next : 'down';\n\toptions.prev = options.prev ? options.prev : 'up';\n\n\t// Exit if target and selector are not set\n\tif (!options.target || !options.selector) return;\n\n\t// Set tabindex on selectors so they can be focused\n\tsetTabIndex(options);\n\n\t// Add event listener to selectors\n\twindow.addEventListener(options.event, function (e) {\n\t\tdispatch(e, options);\n\t});\n};\nmodule.exports = a11yarrows;\n\n//# sourceURL=webpack://a11yarrows/./src/a11yarrows.js?");
+eval("\n\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/modules/defaults.js\");\nvar dispatch = __webpack_require__(/*! ./modules/dispatch */ \"./src/modules/dispatch.js\");\nvar setTabIndex = __webpack_require__(/*! ./modules/tabindex */ \"./src/modules/tabindex.js\");\n__webpack_require__(/*! ./modules/polyfills */ \"./src/modules/polyfills.js\");\n\n/**\n * a11yarrows creates event listeners for arrow keys\n * @param {*} target\n * @param {*} options\n */\nvar a11yarrows = function a11yarrows(target, options) {\n\t// Set options\n\toptions = Object.assign({}, defaults, options);\n\toptions.target = target;\n\toptions.next = options.next ? options.next : \"down\";\n\toptions.prev = options.prev ? options.prev : \"up\";\n\n\t// Exit if target and selector are not set\n\tif (!options.target || !options.selector) return;\n\n\t// Set tabindex on selectors so they can be focused\n\tsetTabIndex(options);\n\n\t// Add event listener to selectors\n\twindow.addEventListener(options.event, function (e) {\n\t\tdispatch(e, options);\n\t});\n};\nmodule.exports = a11yarrows;\n\n//# sourceURL=webpack://a11yarrows/./src/a11yarrows.js?");
 
 /***/ }),
 
@@ -107,7 +107,7 @@ eval("\n\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/m
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nmodule.exports = {\n\tselector: 'a',\n\tloop: true,\n\tevent: 'keydown',\n\tnext: 'down',\n\tprev: 'up'\n};\n\n//# sourceURL=webpack://a11yarrows/./src/modules/defaults.js?");
+eval("\n\nmodule.exports = {\n\tselector: \"a\",\n\tloop: true,\n\tevent: \"keydown\",\n\tnext: \"down right\",\n\tprev: \"up left\"\n};\n\n//# sourceURL=webpack://a11yarrows/./src/modules/defaults.js?");
 
 /***/ }),
 
@@ -119,7 +119,7 @@ eval("\n\nmodule.exports = {\n\tselector: 'a',\n\tloop: true,\n\tevent: 'keydown
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar keycodes = __webpack_require__(/*! ./keycodes */ \"./src/modules/keycodes.js\");\nvar getIndex = __webpack_require__(/*! ./getIndex */ \"./src/modules/getIndex.js\");\nvar isSelector = __webpack_require__(/*! ./isSelector */ \"./src/modules/isSelector.js\");\n\n/**\n * Dispatch run on window eventlistener\n *\n * @param {*} e\n * @param {*} options\n */\nvar dispatch = function dispatch(e, options) {\n\n\tvar el = e.target; // Current target focus\n\tvar keycode = e.which || e.keycode; // Current keycode\n\n\t// Get all selectors\n\tvar selectors = options.target.querySelectorAll(options.selector);\n\n\t// Convert NodeList to array (IE fix)\n\tselectors = selectors ? Array.prototype.slice.call(selectors) : selectors;\n\n\tvar is_selector = isSelector(el, selectors);\n\n\tif (!selectors || !is_selector) {\n\t\t// Exit if NOT is_selector\n\t\treturn false;\n\t}\n\n\t// Next\n\tif (keycode === keycodes[options.next]) {\n\n\t\tvar index = getIndex(el, selectors, 'next');\n\t\tif (index < selectors.length) {\n\t\t\tselectors[index].focus();\n\t\t\treturn false;\n\t\t} else {\n\t\t\t// Go to first selector\n\t\t\tif (options.loop) {\n\t\t\t\tselectors[0].focus();\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t}\n\n\t// Previous\n\tif (keycode === keycodes[options.prev]) {\n\n\t\tvar _index = getIndex(el, selectors, 'previous');\n\t\tif (_index < selectors.length && _index !== -1) {\n\t\t\tselectors[_index].focus();\n\t\t\treturn false;\n\t\t} else {\n\t\t\t// Go to last selector\n\t\t\tif (options.loop) {\n\t\t\t\tselectors[selectors.length - 1].focus();\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t}\n\n\treturn true;\n};\nmodule.exports = dispatch;\n\n//# sourceURL=webpack://a11yarrows/./src/modules/dispatch.js?");
+eval("\n\nvar keycodes = __webpack_require__(/*! ./keycodes */ \"./src/modules/keycodes.js\");\nvar getIndex = __webpack_require__(/*! ./getIndex */ \"./src/modules/getIndex.js\");\nvar isSelector = __webpack_require__(/*! ./isSelector */ \"./src/modules/isSelector.js\");\nvar keycodeArray = __webpack_require__(/*! ./keycodeArray */ \"./src/modules/keycodeArray.js\");\n\n/**\n * Dispatch run on window eventlistener\n *\n * @param {*} e\n * @param {*} options\n */\nvar dispatch = function dispatch(e, options) {\n\tvar el = e.target; // Current target focus\n\tvar keycode = e.which || e.keycode; // Current keycode\n\n\t// Get all selectors\n\tvar selectors = options.target.querySelectorAll(options.selector);\n\n\t// Convert NodeList to array (IE fix)\n\tselectors = selectors ? Array.prototype.slice.call(selectors) : selectors;\n\n\tvar is_selector = isSelector(el, selectors);\n\n\tif (!selectors || !is_selector) {\n\t\t// Exit if NOT is_selector\n\t\treturn false;\n\t}\n\n\t// Next\n\tvar nextCodes = keycodeArray(options.next, keycodes);\n\tif (nextCodes.indexOf(keycode) !== -1) {\n\t\tvar index = getIndex(el, selectors, \"next\");\n\t\tif (index < selectors.length) {\n\t\t\tselectors[index].focus();\n\t\t\treturn false;\n\t\t} else {\n\t\t\t// Go to first selector\n\t\t\tif (options.loop) {\n\t\t\t\tselectors[0].focus();\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t}\n\n\t// Previous\n\tvar prevCodes = keycodeArray(options.prev, keycodes);\n\tif (prevCodes.indexOf(keycode) !== -1) {\n\t\tvar _index = getIndex(el, selectors, \"previous\");\n\t\tif (_index < selectors.length && _index !== -1) {\n\t\t\tselectors[_index].focus();\n\t\t\treturn false;\n\t\t} else {\n\t\t\t// Go to last selector\n\t\t\tif (options.loop) {\n\t\t\t\tselectors[selectors.length - 1].focus();\n\t\t\t\treturn false;\n\t\t\t}\n\t\t}\n\t}\n\n\treturn true;\n};\nmodule.exports = dispatch;\n\n//# sourceURL=webpack://a11yarrows/./src/modules/dispatch.js?");
 
 /***/ }),
 
@@ -144,6 +144,18 @@ eval("\n\n/**\n * Get the index of the current focused item\n * @param {*} el\n 
 
 "use strict";
 eval("\n\n/**\n * Loop over selectors to determine if the current focused element is in array\n * @param {*} el\n * @param {*} nodelist\n * @param {*} options\n */\nvar isSelector = function isSelector(el, nodelist) {\n  var array = Array.prototype.slice.call(nodelist); // Now it's an Array.\n  var pos = array.indexOf(el);\n  return pos === -1 ? false : true;\n};\nmodule.exports = isSelector;\n\n//# sourceURL=webpack://a11yarrows/./src/modules/isSelector.js?");
+
+/***/ }),
+
+/***/ "./src/modules/keycodeArray.js":
+/*!*************************************!*\
+  !*** ./src/modules/keycodeArray.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n/**\n * Build an array of keycodes\n * @param {*} option\n * @param {*} keycodes\n */\nvar keycodeArray = function keycodeArray(option, keycodes) {\n\tvar array = option.split(\" \");\n\tvar codeArray = [];\n\tfor (var i = 0; i < array.length; i++) {\n\t\tcodeArray.push(keycodes[array[i]]);\n\t}\n\treturn codeArray;\n};\nmodule.exports = keycodeArray;\n\n//# sourceURL=webpack://a11yarrows/./src/modules/keycodeArray.js?");
 
 /***/ }),
 

@@ -1,4 +1,5 @@
 # a11yarrows
+
 Enable keyboard arrow navigation on focusable elements - [View example](https://dcooney.github.io/a11yarrows/example/)
 
 ## Install
@@ -46,18 +47,17 @@ a11yarrows(target, {
 ```
 
 ## Options
+
 a11yarrows accept a number of configuration parameters:
 
-| Option   	| Description                                               	|
-|----------	|-----------------------------------------------------------	|
-| selector 	| The target child elements to recieve focus. `default 'a'` 	|
-| loop 		| User will loop through the choices. `default true` 				|
-| event    	| JavaScript EventListener. `default 'keydown'`                |
-| next     	| Keyboard key to move to next element. `default 'down'`    	|
-| prev     	| Keyboard key to move to previous element. `default 'up'`  	|
-
+| Option   | Description                                                   |
+| -------- | ------------------------------------------------------------- |
+| selector | The target child elements to recieve focus. `default 'a'`     |
+| loop     | User will loop through the choices. `default true`            |
+| event    | JavaScript EventListener. `default 'keydown'`                 |
+| next     | Keyboard key to move to next element. `default 'down right'`  |
+| prev     | Keyboard key to move to previous element. `default 'up left'` |
 
 ## License
+
 a11yarrows is released under the MIT license.
-
-

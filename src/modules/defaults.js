@@ -1,7 +1,7 @@
 module.exports = {
-	selector: 'a',
+	selector: "a",
 	loop: true,
-	event: 'keydown',
-	next: 'down',
-	prev: 'up'
-}
+	event: "keydown",
+	next: "down right",
+	prev: "up left",
+};
