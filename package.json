@@ -1,6 +1,6 @@
 {
 	"name": "a11yarrows",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "a11yarrows enables keyboard arrow navigation on focusable elements.",
 	"main": "src/a11yarrows.js",
 	"scripts": {
