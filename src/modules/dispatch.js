@@ -32,11 +32,15 @@ let dispatch = (e, options) => {
 		let index = getIndex(el, selectors, "next");
 		if (index < selectors.length) {
 			selectors[index].focus();
+			e.preventDefault();
+			e.stopPropagation();
 			return false;
 		} else {
 			// Go to first selector
 			if (options.loop) {
 				selectors[0].focus();
+				e.preventDefault();
+				e.stopPropagation();
 				return false;
 			}
 		}
@@ -48,11 +52,15 @@ let dispatch = (e, options) => {
 		let index = getIndex(el, selectors, "previous");
 		if (index < selectors.length && index !== -1) {
 			selectors[index].focus();
+			e.preventDefault();
+			e.stopPropagation();
 			return false;
 		} else {
 			// Go to last selector
 			if (options.loop) {
 				selectors[selectors.length - 1].focus();
+				e.preventDefault();
+				e.stopPropagation();
 				return false;
 			}
 		}
