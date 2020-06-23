@@ -8,7 +8,7 @@ require("./modules/polyfills");
  * @param {*} target
  * @param {*} options
  */
-let a11yarrows = (target, options) => {
+export function init(target, options) {
 	// Set options
 	options = Object.assign({}, defaults, options);
 	options.target = target;
@@ -25,5 +25,4 @@ let a11yarrows = (target, options) => {
 	window.addEventListener(options.event, function (e) {
 		dispatch(e, options);
 	});
-};
-module.exports = a11yarrows;
+}

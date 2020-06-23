@@ -20,15 +20,15 @@ At minimum, a11yarrows requires a `target` HTML element to be defined and passed
 
 There is also an optional [`options`](#options) object that can modify default parameters.
 
-`a11yarrows(target, options);`
+`a11yarrows.init(target, options);`
 
 Initialize as ES6 Module:
 
 ```
-import a11yarrows from 'a11yarrows';
+import * as a11yarrows from 'a11yarrows';
 
 let target = document.querySelector('#a11y-list');
-a11yarrows(target, {
+a11yarrows.init(target, {
 	// options
 	selector: 'li'
 });
@@ -38,11 +38,9 @@ Initialize with Vanilla JS:
 
 ```
 let target = document.querySelector('#a11y-list');
-a11yarrows(target, {
+a11yarrows.init(target, {
 	// options
-	selector: '.item',
-	next: 'right',
-	prev: 'left'
+	selector: '.item'
 });
 ```
 

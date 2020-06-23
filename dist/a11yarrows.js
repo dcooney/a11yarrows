@@ -1,5 +1,14 @@
-var a11yarrows =
-/******/ (function(modules) { // webpackBootstrap
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["a11yarrows"] = factory();
+	else
+		root["a11yarrows"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -95,7 +104,7 @@ var a11yarrows =
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/modules/defaults.js\");\nvar dispatch = __webpack_require__(/*! ./modules/dispatch */ \"./src/modules/dispatch.js\");\nvar setTabIndex = __webpack_require__(/*! ./modules/tabindex */ \"./src/modules/tabindex.js\");\n__webpack_require__(/*! ./modules/polyfills */ \"./src/modules/polyfills.js\");\n\n/**\n * a11yarrows creates event listeners for arrow keys\n * @param {*} target\n * @param {*} options\n */\nvar a11yarrows = function a11yarrows(target, options) {\n\t// Set options\n\toptions = Object.assign({}, defaults, options);\n\toptions.target = target;\n\toptions.next = options.next ? options.next : \"down\";\n\toptions.prev = options.prev ? options.prev : \"up\";\n\n\t// Exit if target and selector are not set\n\tif (!options.target || !options.selector) return;\n\n\t// Set tabindex on selectors so they can be focused\n\tsetTabIndex(options);\n\n\t// Add event listener to selectors\n\twindow.addEventListener(options.event, function (e) {\n\t\tdispatch(e, options);\n\t});\n};\nmodule.exports = a11yarrows;\n\n//# sourceURL=webpack://a11yarrows/./src/a11yarrows.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n\tvalue: true\n});\nexports.init = init;\nvar defaults = __webpack_require__(/*! ./modules/defaults */ \"./src/modules/defaults.js\");\nvar dispatch = __webpack_require__(/*! ./modules/dispatch */ \"./src/modules/dispatch.js\");\nvar setTabIndex = __webpack_require__(/*! ./modules/tabindex */ \"./src/modules/tabindex.js\");\n__webpack_require__(/*! ./modules/polyfills */ \"./src/modules/polyfills.js\");\n\n/**\n * a11yarrows creates event listeners for arrow keys\n * @param {*} target\n * @param {*} options\n */\nfunction init(target, options) {\n\t// Set options\n\toptions = Object.assign({}, defaults, options);\n\toptions.target = target;\n\toptions.next = options.next ? options.next : \"down\";\n\toptions.prev = options.prev ? options.prev : \"up\";\n\n\t// Exit if target and selector are not set\n\tif (!options.target || !options.selector) return;\n\n\t// Set tabindex on selectors so they can be focused\n\tsetTabIndex(options);\n\n\t// Add event listener to selectors\n\twindow.addEventListener(options.event, function (e) {\n\t\tdispatch(e, options);\n\t});\n}\n\n//# sourceURL=webpack://a11yarrows/./src/a11yarrows.js?");
 
 /***/ }),
 
@@ -196,3 +205,4 @@ eval("\n\n/**\n *\n * @param {*} options\n */\nvar setTabIndex = function setTab
 /***/ })
 
 /******/ });
+});

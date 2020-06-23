@@ -1,8 +1,8 @@
 {
 	"name": "a11yarrows",
-	"version": "1.0.6",
+	"version": "1.0.9",
 	"description": "a11yarrows enables keyboard arrow navigation on focusable elements.",
-	"main": "src/a11yarrows.js",
+	"main": "dist/a11yarrows.min.js",
 	"scripts": {
 		"start": "webpack -w --mode development --config=webpack/dev.config.js",
 		"build": "webpack -p --mode production --config=webpack/prod.config.js",
@@ -16,6 +16,7 @@
 	"homepage": "https://github.com/dcooney/a11yarrows",
 	"keywords": [
 		"a11y",
+		"accessibility",
 		"js",
 		"es6",
 		"keyboard",

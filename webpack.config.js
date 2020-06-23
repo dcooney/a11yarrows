@@ -1,27 +1,27 @@
-var path = require('path');
-var dir = 'dist';
-var name = 'a11yarrows';
+var path = require("path");
+var dir = "dist";
+var name = "a11yarrows";
 module.exports = {
-   entry: {
-      a11yarrows: "./src/a11yarrows.js"
-   },
+	entry: {
+		a11yarrows: "./src/a11yarrows.js",
+	},
 	output: {
-   	path: path.join(__dirname, dir),
-      filename: "[name].js",
-		libraryTarget: 'var',
-		library: name
-   },
+		path: path.join(__dirname, dir),
+		filename: "[name].js",
+		library: name,
+		libraryTarget: "umd",
+	},
 	module: {
 		rules: [
 			{
 				test: /.jsx?$/,
-				loader: 'babel-loader',
+				loader: "babel-loader",
 				exclude: /node_modules/,
 				query: {
-					presets: ['env']
-				}
+					presets: ["env"],
+				},
 			},
-		]
+		],
 	},
-	plugins: []
+	plugins: [],
 };
