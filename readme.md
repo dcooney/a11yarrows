@@ -24,23 +24,23 @@ There is also an optional [`options`](#options) object that can modify default p
 
 Initialize as ES6 Module:
 
-```
-import * as a11yarrows from 'a11yarrows';
+```javascript
+import * as a11yarrows from "a11yarrows";
 
-let target = document.querySelector('#a11y-list');
+let target = document.querySelector("#a11y-list");
 a11yarrows.init(target, {
 	// options
-	selector: 'li'
+	selector: "li",
 });
 ```
 
 Initialize with Vanilla JS:
 
-```
-let target = document.querySelector('#a11y-list');
+```javascript
+let target = document.querySelector("#a11y-list");
 a11yarrows.init(target, {
 	// options
-	selector: '.item'
+	selector: ".item",
 });
 ```
 
