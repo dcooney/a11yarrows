@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta http-equiv="x-ua-compatible" content="IE=edge">
+	<head>
+		<meta http-equiv="x-ua-compatible" content="IE=edge" />
 
-	 <title>a11yarrows.js Example</title>
-	 <style>
-		 body{
-			 padding: 20px;
-			 margin: 0;
-			 font-size: 16px;
-			 font-family: 'Helvetica Neue', sans-serif;
-			 color: #333;
-		 }
-		 #container{
-			 max-width: 1000px;
-			 margin: 0 auto;
-		 }
-		 hr{
-			 margin: 30px 0;
-			 display: block;
-		 }
-		 h1{
-			 margin-bottom: 5px;
-		 }
-		 p{
-			 margin: 0 0 20px;
-		 }
-		 li{
-			 padding: 3px 0;
-		 }
-		 button{
-			 padding: 5px 10px;
-			 border-radius: 4px;
-			 font-size: 15px;
-			 font-family: 'Helvetica Neue', sans-serif;
-			 color: #333;
-		 }
-		 button:focus{
-			 background: blue;
-			 color: #fff;
-			 opacity: 1;
-		 }
-	 </style>
-</head>
-<body>
+		<title>a11yarrows.js Example</title>
+		<style>
+			body {
+				padding: 20px;
+				margin: 0;
+				font-size: 16px;
+				font-family: "Helvetica Neue", sans-serif;
+				color: #333;
+			}
+			#container {
+				max-width: 1000px;
+				margin: 0 auto;
+			}
+			hr {
+				margin: 30px 0;
+				display: block;
+			}
+			h1 {
+				margin-bottom: 5px;
+			}
+			p {
+				margin: 0 0 20px;
+			}
+			li {
+				padding: 3px 0;
+			}
+			button {
+				padding: 5px 10px;
+				border-radius: 4px;
+				font-size: 15px;
+				font-family: "Helvetica Neue", sans-serif;
+				color: #333;
+			}
+			button:focus {
+				background: blue;
+				color: #fff;
+				opacity: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<h1>a11yarrows</h1>
+			<p style="font-size: 20px;">
+				JavaScript to enable keyboard arrow navigation (for accessibility)
+				on focusable elements.
+			</p>
+			<p>
+				Try it out by tabbing into the list and use your `up` and `down`
+				keyboard arrows - a11yarrows will traverse the selector elements
+				only
+			</p>
+			<hr />
 
-	<div id="container">
-
-		<h1>a11yarrows</h1>
-		<p style="font-size: 20px;">JavaScript to enable keyboard arrow navigation (for accessibility) on focusable elements.</p>
-		<p>Try it out by tabbing into the list and use your `up` and `down` keyboard arrows - a11yarrows will traverse the selector elements only</p>
-		<hr/>
-
-		<div id="a11y-list">
-			<ul>
-				<li class="item">Item One</li>
-				<li>
-					<a href="#" class="item">Item Two (href)</a>
-					<ul>
-						<li class="item">Nested One</li>
-						<li class="item">Nested Two</li>
-						<li>Nested Three <i>(Not Selectable)</i></li>
-						<li class="item">Nested Four</li>
-					</ul>
-				</li>
-				<li class="item">Item Three</li>
-				<li class="item">Item Four</li>
-				<li class="item">Item Five</li>
-			</ul>
-			<button class="item" type="button">Learn More</button>
+			<div id="a11y-list">
+				<ul>
+					<li class="item">Item One</li>
+					<li>
+						<a href="#" class="item">Item Two (href)</a>
+						<ul>
+							<li class="item">Nested One</li>
+							<li class="item">Nested Two</li>
+							<li>Nested Three <i>(Not Selectable)</i></li>
+							<li class="item">Nested Four</li>
+						</ul>
+					</li>
+					<li class="item">Item Three</li>
+					<li class="item">Item Four</li>
+					<li class="item">Item Five</li>
+				</ul>
+				<button class="item" type="button">Learn More</button>
+			</div>
 		</div>
-	</div>
 
-	<script src="../dist/a11yarrows.js"></script>
-	<script>
-		var list = document.querySelector('#a11y-list');
-		a11yarrows(list, {
-			// options
-			selector: '.item'
-		});
-	</script>
-</body>
+		<script src="../dist/a11yarrows.js"></script>
+		<script>
+			var list = document.querySelector("#a11y-list");
+			a11yarrows.init(list, {
+				// options
+				selector: ".item",
+			});
+		</script>
+	</body>
 </html>
